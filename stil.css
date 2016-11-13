@@ -1,0 +1,166 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+footer {
+  background:#ff9900;
+}
+header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ff9900;
+}
+.logo{
+  float:left;
+  padding-top: 3px;
+  padding-left: 3px;
+  padding-right: 10px;
+}
+.menu-links{
+  float:left;
+}
+.menu-links a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+    font-family: Verdana;
+}
+
+.menu-links a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #e68a00
+}
+
+footer {
+  clear:both;
+}
+body {
+  background:grey;
+  margin:0;
+  padding: 0;
+}
+.centered-content {
+  margin-left:auto;
+  margin-right:auto;
+}
+.main {
+  min-height:1000px;
+  background:green;
+}
+article form label {
+  float:left;
+  width:60px;
+  clear:left;
+}
+.no-fixed-width {
+  width:auto;
+}
+article form input,
+article form textarea {
+  float:left;
+}
+.content article {
+  clear:both;
+}
+.sobe {
+  background-color: lightgrey;
+  display:block;
+  width:20%;
+  padding: 20px;
+  float:left;
+}
+.inline {
+    float:left;
+}
+.content {
+  width:60%;
+  float:left;
+}
+.palette{
+  padding: 10px;
+  background-color: grey;
+  width:20%;
+  float:right;  
+  height: 500px;
+}
+.kvadrat{
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+  background-color: rgba(250,30,30,0.5);
+}
+.panel{
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgba(40,30,250,0.8);
+  margin: 20px auto;
+}
+.merilo {
+    width:10%;
+    border-bottom:1px solid #ccc;
+    display: inline-block;
+    margin-bottom:5px;
+}
+#meritev{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top:20px;
+}
+
+#meritev2{
+  top:20px;
+}
+#resizable { 
+  width: 100px; 
+  height: 20px; 
+  padding: 0.0em; 
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border-left: 3px solid rgb(50,50,50);
+  border-right: 3px solid rgb(50,50,50);
+  background: linear-gradient(to bottom, 
+                              transparent 0%, 
+                              transparent calc(50% - 0.81px), 
+                              black calc(50% - 0.8px), 
+                              black calc(50% + 0.8px), 
+                              transparent calc(50% + 0.81px), 
+                              transparent 100%);
+}
+@media screen and (min-width: 500px) {
+  input[type=text] {
+      width: 80px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    input[type=text] {
+      width: 100px;
+    }
+}
+@media screen and (min-width: 800px) {
+    input[type=text] {
+      width: 120px;
+    }
+}
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1400px) {
+
+}
