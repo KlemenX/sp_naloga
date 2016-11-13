@@ -39,6 +39,7 @@ $(document).ready(function() {
 		    div.innerHTML = div.innerHTML + "700W";
 		   	document.getElementById('kvadrat'+st).append(div);
 		   	st++;
+		$( ".panel" ).draggable();
     	}
     });
 
