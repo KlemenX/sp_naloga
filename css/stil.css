@@ -1,0 +1,226 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #ff9900;
+    position: relative;
+    height: 50px;
+}
+
+
+.sobe,
+.content,
+.palette{
+  height: auto;
+  padding: .5rem;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+
+}
+.sobe, 
+.content{
+    overflow: auto;
+}
+.sobe::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.palette::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    flex: 1;
+    position:relative;
+    background-color: #fcfcfc
+
+  }
+
+.logo{
+  float:left;
+  padding-top: 3px;
+  padding-left: 3px;
+  padding-right: 10px;
+}
+.menu-links{
+  float:left;
+}
+.menu-links a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+    font-family: Verdana;
+}
+
+.menu-links a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #e68a00;
+}
+
+footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 30px;
+    background:#ff9900;
+}
+body{
+  overflow-x: hidden;
+}
+html,body {
+  background:grey;
+  margin:0;
+  padding: 0;
+}
+.centered-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: calc(100vh - 80px);
+    position: relative;
+    width: 100%;
+}
+.main {
+  background:green;
+}
+.sobe{
+     width: 10rem;
+    background-color: #ffbb3d;
+}
+.palette{
+     width: 10rem;
+    background-color: #ffbb3d;
+}
+article form label {
+  float:left;
+  width:60px;
+  clear:left;
+}
+.no-fixed-width {
+  width:auto;
+}
+article form input,
+article form textarea {
+  float:left;
+}
+.content article {
+  clear:both;
+}
+
+.inline {
+    float:left;
+}
+
+.kvadrat{
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+  background-color: rgba(250,30,30,0.5);
+  z-index: 2;
+}
+.panel{
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgba(40,30,250,0.8);
+  margin: 20px auto;
+  z-index: 3;
+}
+#merilo {
+  background-color: rgba(180,180,180,1); 
+  border:1px 
+  solid;border-radius: 5px;
+
+}
+#meritevVpis{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top:20px;
+}
+
+#meritevBtn{
+  top:20px;
+}
+#resizable { 
+  position: relative;
+  width: 50%;
+  height: 15%;
+  max-width: 60%;
+  max-height: 20%;
+
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border-left: 3px solid rgb(50,50,50);
+  border-right: 3px solid rgb(50,50,50);
+  background: linear-gradient(to bottom, 
+                              transparent 0%, 
+                              transparent calc(50% - 0.81px), 
+                              black calc(50% - 0.8px), 
+                              black calc(50% + 0.8px), 
+                              transparent calc(50% + 0.81px), 
+                              transparent 100%);
+}
+
+.box{
+    z-index: 2;
+    width:145px;
+    height:20px;
+    position:absolute !important;
+    top:30%;
+    left:5%;
+    background:deepPink;
+}
+.boxT{
+    width:145px;
+    height:20px;
+
+    background:deepPink;
+}
+
+@media screen and (min-width: 600px) {
+    input[type=text] {
+      width: 80px;
+    }
+}
+@media screen and (min-width: 800px) {
+    input[type=text] {
+      width: 120px;
+    }
+  .sobe{
+     width: 14rem;
+  }
+  .palette{
+     width: 14rem;
+   }
+}
+@media screen and (min-width: 1200px) {
+  .sobe{
+     width: 18rem;
+  }
+  .palette{
+     width: 18rem;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+
+}

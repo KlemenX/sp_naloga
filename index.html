@@ -3,13 +3,13 @@
   <head>
     <title>FRI vremenska postaja</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
-    <link rel="stylesheet" href="stil.css">
+    <link rel="stylesheet" href="css/stil.css">
   </head>
   
   <body>
     <header>
       <div class="header-content centered-content">
-        <a href="/"><img src="logo.png" class= "logo" width="120px" alt="logo"/></a>
+        <a href="/"><img src="logo.png" class= "logo" width="120px" href="index.html"/></a>
         <div class="menu-links"><a class="active" href="index.html">Domov</a></div>
         <div class="menu-links"><a href="podatki.html">Podatki</a></div>
         <div class="menu-links" style="float:right;"><a href="login.html">Izpiši</a></div>
@@ -18,29 +18,17 @@
     <div class="main centered-content" id="tloris">
       <div class="sobe">
         <div id="soba1" method="POST">
-          <span><b>Soba 1</b></span>
+          <span><b>Vnos sobe</b></span>
           <form class="vstavi-sobo" id = "1">
             <label>Ime sobe</label> <input type="text" name="ime" title="Vpišite ime sobe" placeholder="imesobe1" required />
-            <div>
               <label>Dolžina:</label> <input type="number" name="dolzina" style= "width: 50px;" id = "merax1" required /><span> m2</span>
-            </div>
             <div>
               <label>Širina:</label> <input type="number" name="sirina" style= "width: 50px;" id = "meray1" required /><span> m2</span>
             </div>
+            <div>
+              <label>Št.zunanjih sten: </label> <input type="number" name="sirina" style= "width: 50px;" id = "ststen1" required /><span> m2</span>
+            </div>
             <label><input type="submit" value="Pošlji sobo" class ="novasoba" id = "1"/></label>
-          </form>
-        </div>
-        <div id="soba2" method="POST">
-          <span><b>Soba 2</b></span>
-          <form class="vstavi-sobo" id = "2">
-            <label>Ime sobe</label> <input type="text" name="ime" title="Vpišite ime sobe" placeholder="imesobe2" required />
-            <div>
-              <label>Dolžina:</label> <input type="number" name="dolzina" style= "width: 50px;" id = "merax2" required /><span> m2</span>
-            </div>
-            <div>
-              <label>Širina:</label> <input type="number" name="sirina" style= "width: 50px;" id = "meray2" required /><span> m2</span>
-            </div>
-            <label><input type="submit" value="Pošlji sobo" class ="novasoba" id = "2"/></label>
           </form>
         </div>
         <input type="button" value="Dodaj Sobo" class ="dodajsobo" id = "dodajsoboBtn"/>
@@ -48,17 +36,35 @@
       </div>
       <section class="content">
         <input type="file" id= "uplImg">
-        <div id="resizable" >
-            <span style="background-color: rgba(180,180,180,1); border:1px solid;border-radius: 5px;">Merilo</span>
-            <div id = "meritev">
-              <form class="potrdi-meritev" id="vpisMerila">
-                <input type="text" name="mer" style="width:30px;" id = "testna_vrednost" required /> <span>m</span> 
-                <div id = "meritev2">
-                  <input type="submit" value="Potrdi" />
-                </div>
-              </form>
-            </div>
+        <!--[if IE]>
+        <div id="testiranje" > 
+          <div id="resizable" >
+              <span id="merilo">Merilo</span>
+          </div>
+          <div id = "meritevVpis">
+            <form class="potrdi-meritev" id="vpisMerila">
+              <input type="text" name="mer" style="width:30px;" id = "testna_vrednost" required /> <span>m</span> 
+              <div id = "meritevBtn">
+                <input type="submit" value="Potrdi" />
+              </div>
+            </form>
+          </div>
         </div>
+        <![endif]-->
+        <!--
+        <div class="box"></div>
+        
+        <div class="info">
+        </div>
+        -->
+        <div id="MapWrapper">
+        <img id = "testnaSlika" src="https://github.com/jamietre/ImageMapster/raw/master/examples/images/usa_map_720.png" 
+        usemap="#usa" style ="max-width:100%; max-height:100%;">
+        </div>
+        <map id="usa_image_map" name="usa">
+          <area href="#" state="LA" full="Louisiana" shape="poly" coords="437,357,437,356,436,353,433,350,434,345,434,344,432,344,426,345,409,346,408,344,409,338,411,334,415,328,414,326,415,326,416,324,414,323,414,321,413,318,413,314,404,314,391,314,374,314,374,321,375,329,376,331,377,334,378,338,381,341,381,344,382,344,381,350,379,354,380,356,380,358,380,363,378,365,379,368,382,367,388,366,395,369,400,370,403,369,405,370,407,371,408,369,406,368,404,368,401,367,406,366,407,366,410,366,410,368,410,370,414,370,416,371,415,372,414,373,415,374,421,377,424,376,425,374,426,374,428,372,428,373,429,375,428,376,428,377,431,375,432,373,433,373,431,372,431,371,431,370,433,370,434,369,434,369,440,374,441,374,443,374,444,375,446,373,446,372,445,372,443,370,438,369,436,368,437,366,438,366,439,365,437,365,437,365,440,365,441,362,440,361,440,359,439,359,437,361,437,362,434,362,434,361,435,359,437,358,437,357">
+          <div href="#" class="boxT"></div>
+        </map>
       </section>
       <section class="palette">
         Sobe
@@ -74,9 +80,10 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>    
-      <script type="text/javascript" src="script.js"></script>
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
       <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
       <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      <script type="text/javascript" src="js/jquery.imagemapster.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html> 

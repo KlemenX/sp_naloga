@@ -36,8 +36,10 @@ header {
 
 .content {
     flex: 1;
-    background-color: #fcfcfc;
-}
+    position:relative;
+    background-color: #fcfcfc
+
+  }
 
 .logo{
   float:left;
@@ -139,13 +141,13 @@ article form textarea {
   margin: 20px auto;
   z-index: 3;
 }
-.merilo {
-    width:10%;
-    border-bottom:1px solid #ccc;
-    display: inline-block;
-    margin-bottom:5px;
+#merilo {
+  background-color: rgba(180,180,180,1); 
+  border:1px 
+  solid;border-radius: 5px;
+
 }
-#meritev{
+#meritevVpis{
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -154,13 +156,16 @@ article form textarea {
   top:20px;
 }
 
-#meritev2{
+#meritevBtn{
   top:20px;
 }
 #resizable { 
-  width: 100px; 
-  height: 20px; 
-  padding: 0.0em; 
+  position: relative;
+  width: 50%;
+  height: 15%;
+  max-width: 60%;
+  max-height: 20%;
+
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -174,10 +179,15 @@ article form textarea {
                               transparent calc(50% + 0.81px), 
                               transparent 100%);
 }
-@media screen and (min-width: 500px) {
-  input[type=text] {
-      width: 80px;
-    }
+
+.box{
+    z-index: 2;
+    width:145px;
+    height:20px;
+    position:absolute !important;
+    top:30%;
+    left:5%;
+    background:deepPink;
 }
 
 @media screen and (min-width: 600px) {
