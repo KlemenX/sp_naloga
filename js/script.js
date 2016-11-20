@@ -60,69 +60,27 @@ $(document).ready(function() {
 	        var reader = new FileReader();
 	        reader.onloadend = function() {
 	             img.src = reader.result;
+	             document.getElementById('test10').src=reader.result;
+	             //document.getElementById('test9').style.backgroundImage=reader.result;	             
+	             console.log(reader.result);
 	        }
 	        reader.readAsDataURL(file);
+	        //console.log(readAsDataURL(file));
 	        img.style.maxWidth = "100%";
 	        img.style.maxHeight = "100%";
 	        $("#uplImg").after(img);
 
 	    }
 	});
-	/*-----TEST
-	$('#resizable').draggable({
-        revert: 'invalid',
-        cursor: 'move'
-    });
-    $('.content').droppable({
-        accept: '#resizable div, .content div',
-        drop: function (event, ui) {
-            var parent = ui.draggable.parent();
-            var draggedElement = $(ui.draggable);
-            var dropZone = $(this);
 
-            var leftOffset = Math.abs(parent.offset().left - dropZone.offset().left);
-            var topOffset = dropZone.offset().top - parent.offset().top;
 
-            draggedElement.detach().appendTo(dropZone);
 
-            draggedElement.css('left', draggedElement.position().left - leftOffset);
-            draggedElement.css('top', draggedElement.position().top - topOffset);
-
-            draggedElement.draggable('option', 'containment', 'parent');
-        }
-
-    });
-	*/
-	/*
-	$(function () {
-            $("#resizable")
-                .resizable({ handles: "all", autoHide: true })
-                .parent()
-                    .draggable(); 
-                size.height = originalSize.height;          
-    });
-	*/
-	/*
-	$(function () {
-            $("#resizeDiv")
-                .resizable({ handles: "all", autoHide: true }).parent().draggable(); 
-           	$("#resizeDiv").draggable();      
-    });
-	$("#resizeDiv").resizable({
-	    resize: function(event, ui) {
-	        ui.size.height = ui.originalSize.height;
-
-	    }
-	});
-	*/
-
-	$('.box')
-	.resizable({containment: 'parent', 
-		handles: "se", create: setContainerResizer, stop:resizeStop, 
-		resize: function(event, ui) {
-	        ui.size.height = ui.originalSize.height;
-	    }})
-	.draggable({containment: 'parent', stop:dragStop});
+//
+	$('#element')
+	.resizable({containment: 'parent',handles: "se",stop:resizeStop,resize: function(event, ui) {
+		        ui.size.height = ui.originalSize.height;
+		    }})
+	.draggable({containment: 'parent', stop:dragStop})
 
 	function resizeStop(event, ui){
 	    convert_to_percentage($(this));
@@ -132,125 +90,16 @@ $(document).ready(function() {
 	    convert_to_percentage($(this));
 	}
 
-	function setContainerResizer(event, ui) {
-	    console.log($(this)[0]);
-	    //$($(this)[0]).children('.ui-resizable-handle').mouseover(setContainerSize);
-	}
-
 	function convert_to_percentage(el){
 	    var parent = el.parent();
-	    var visina;
-	    if (document.getElementById('tlorisSlika') ){
-	    	console.log(document.getElementById('tlorisSlika').height/document.getElementById('tlorisSlika').height);
-	    	visinaSlike = document.getElementById('tlorisSlika').height;
-	    	visina = parseFloat(el.css('top'))/parent.height()*100.0-2+"%";
-	    }
-	    else{
-	    	visina = parseFloat(el.css('top'))/parent.height()*100.0-2+"%";
-	    }
+	    console.log(parseInt(el.css('left')),parent.width(),parseInt(el.css('left'))/parent.width()+8.0);
 	    el.css({
-	        left:parseFloat(el.css('left'))/parent.width()*100.0-2+"%",
-	        top: visina,
-	        width: el.width()/parent.width()*100.0-1.5+"%",
-	        height: el.height()/parent.height()*100.0+"%"
+	        left:parseInt(el.css('left'))/(parent.width()-0.0)*100.0+"%",
+	        top: parseInt(el.css('top'))/(parent.height()-0.0)*100.0+"%",
+	        width: el.width()/(parent.width()-20.0)*100.0+"%",
+	        height: el.height()/(parent.height()+0.0)*100.0+"%"
 	    });
-	    parent.css('height', 'auto');
 	}
-	
-	function setContainerSize(el) {
-	    var parent = $(el.target).parent().parent();
-	    parent.css('height', parent.height() + "px");
-
-	}
-
-	/*
-	function recalc(){
-       var width, height;
-       width = $('#tlorisSlika').width();
-       height = $('#tlorisSlika').height();
-       //console.log($(".box").css('top'),$('#tlorisSlika').css('top'),$('#tlorisSlika').height() );
-       max = $('#tlorisSlika').height() + $('#tlorisSlika').css('top');
-       min = $('#tlorisSlika').css('top');
-       pos = $(".box").css('top');
-       visina = pos/height* height;
-       console.log(pos,visina);
-       $(".box").css({"position":"absolute","top": visina + "px"});
-       //$("#foo").css({"position":"absolute","top": width + "px"});
-
-    }
-
-    $(window).load(function(){ recalc();});
-
-    $(window).resize(function () { recalc();});
-
-	*/
-
-
-	var resizeTime = 100;     // total duration of the resize effect, 0 is instant
-	var resizeDelay = 100;    // time to wait before checking the window size again
-	                          // the shorter the time, the more reactive it will be.
-	                          // short or 0 times could cause problems with old browsers.
-	                          
-	$('img').mapster({
-	    mapKey: 'state'
-	});
-
-	// Resize the map to fit within the boundaries provided
-
-	function resize(maxWidth,maxHeight) {
-	     var image =  $('#testnaSlika'),
-	        imgWidth = image.width(),
-	        imgHeight = image.height(),
-	        newWidth=0,
-	        newHeight=0;
-
-	    if (imgWidth/maxWidth>imgHeight/maxHeight) {
-	        newWidth = maxWidth;
-	    } else {
-	        newHeight = maxHeight;
-	    }
-	    console.log(imgWidth,imgHeight,newHeight,newWidth);
-	    image.mapster('resize',newWidth,newHeight,resizeTime);   
-	}
-
-	// Track window resizing events, but only actually call the map resize when the
-	// window isn't being resized any more
-
-	function onWindowResize() {
-	    console.log("a");
-	    var curWidth = $('.content').width(),
-	        curHeight = $('.content').height(),
-	        checking=false;
-	    if (checking) {
-	        return;
-	            }
-	    checking = true;
-	    window.setTimeout(function() {
-	        var newWidth = $('.content').width(),
-	           newHeight = $('.content').height();
-	        if (newWidth === curWidth &&
-	            newHeight === curHeight) {
-	            resize(newWidth,newHeight); 
-	        }
-	        checking=false;
-	    },resizeDelay );
-	}
-
-	$(window).bind('resize',onWindowResize);
-
-
-	/* Debug Info 
-	var myVar=setInterval(function(){
-	    $('.info').html('LEFT : '+$('.box')[0].style.left + '<br />TOP:  '+$('.box')[0].style.top + '<br />WIDTH: '+$('.box')[0].style.width + '<br />HEIGHT: '+$('.box')[0].style.height);
-	},10);
-	/*
-	$("#resizable").resizable({
-	    resize: function(event, ui) {
-	        //ui.size.height = ui.originalSize.height;
-	    }
-	});
-	*/
-	//$("#resizable").draggable();
 
 
 });
