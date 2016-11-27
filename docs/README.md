@@ -11,4 +11,5 @@ Aplikacijo sem testiral v treh različnih brskalnikih: Safari, Chrome ter Firefo
 
 ##Posebni gradniki
 -"Risalna plošča" na strani za načrtovanje, ki omogoča glede na podano merilo vnos sob, ki jih imamo v stanovanju, ter z klikom na izračun se v prostor postavijo paneli(funkcionalnost izračuna smiselne moči panelov bo izdelana v končni oddaji), stran lahko poljubno resizamo in gradniki bojo obdržali razmerja med njimi
+
 -"Merilo" je izdelano tako, da ga lahko poljubno večamo - tako da ga naravnamo na eno sobo in vpišemo mero in se glede na to izrišejo različno velike sobe. Merilo z pomočjo css gradienta izgleda super.
