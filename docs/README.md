@@ -1,7 +1,10 @@
 # Aplikacija IRPanel - Izdelava načrta postavitve panelov
 
 ##Opis aplikacije
-Izdelal sem spletno aplikacijo, kjer uporabnik vpiše podatke stanovanja(posamezno sobo in kvadraturo) ter program mu na podlagi tega izbere število panelov ter moč teh panelov in mu izdela ponudbo. V končni verziji bo imel na izbiro tudi termostate in v ponudbo vključil tudi te. Poskusil bi tudi izdelati tudi grafičen prikaz idealne postavitve panelov/montaže v posamezni sobi za stropno montažo. Uporabnik bi se registriral v aplikacijo in lahko kasneje z prijavo urejal podatke. Ko pa se prijavi administrator se mu prikažejo vse dane ponudbe ki jih lahko tudi ureja, lahko dostopa do informacij kupcev, ter v primeru da se kupec odloči mu izdela tudi predračun.
+Gre za aplikacijo, kjer uporabnik sestavi "maketo" svojega stanovanja in mu aplikacija na podlagi tega izbere število, ter moč IR panelov za posamezen prostor. Izrisal se bo grafičen prikaz idealne postavitve panelov/montaže v posamezni sobi za stropno montažo. Uporabnik se registra v aplikacijo in lahko kasneje z prijavo ureja podatke. Ko pa se prijavi administrator se mu prikažejo vse dane ponudbe ki jih lahko tudi ureja, lahko dostopa do informacij kupcev, ter v primeru da se kupec odloči za izdelano ponudbo mu izdela tudi predračun.
+
+##Trenutna funkcionalnost:
+V program lahko naložimo tloris ali ga slikamo z webkamero, nato podamo merilo za en prostor stanovanja na podlagi katerega se izračuna velikost vnešenih sob na zaslonu. Z klikom na izračun se v center vsakega prostora postavi 700w panel.
 
 ##Ciljna publika in naprave
 Cilna publika so kupci ki se zanimajo za nakup IR panelov in bi si radi izvedeli informativno koliko bi stala oprema stanovanja. Aplikacija je namenjena za vse naprave - mobilce, tablice ter namizne računalnike.
