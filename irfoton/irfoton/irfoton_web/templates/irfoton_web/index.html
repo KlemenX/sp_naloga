@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <title>IRFoton - Prijava</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+  <link rel="stylesheet" href="{% static 'irfoton_web/logincss.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <body>
+  <form method='POST' action="#">
+    <div class="imgcontainer">
+      <img src="{% static 'irfoton_web/logo.png' %}" alt="Avatar">
+    </div>
+    <div class="container">
+      <h3><b>Prijava v sistem</b></h3>
+      {% csrf_token %}
+      {{ loginForm.as_table }}    
+      <button type="submit">Login</button>
+      <br/>
+      <input type="checkbox" checked="checked"> Spomni se me
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <span>Še nimaš uporabniškega račina?</span>
+      <a href="register.html">
+        <button type="button" class="registerbtn">Registriraj se.</button>
+      </a>
+      <span class="psw">Ste pozabili <a href="#">geslo?</a></span>
+    </div>
+  </form>
+  </body>
+</html>
