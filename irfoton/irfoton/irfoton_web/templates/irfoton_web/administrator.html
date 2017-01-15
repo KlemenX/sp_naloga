@@ -1,0 +1,25 @@
+{% extends 'irfoton_web/base_admin.html' %}
+{% load staticfiles%}
+
+{% block naslov %}
+    <title>IRFoton - Administrator</title>
+{% endblock %}
+
+{% block linki-up %}
+{% endblock %}
+
+{% block content %}
+
+<div class="main centered-content" id="uporabniki">
+  <h1>Uporabniki</h1>
+  <br>
+  <ul>
+    {% for user in object_list %}
+      <a href=""><li class="user">{{ user }}</li></a>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block linki-down %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+  <head>
+  	{% block naslov %}
+	{% endblock %}
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+    <link rel="stylesheet" href="{% static 'irfoton_web/indexcss.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    {% block linki-up %}
+	{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="header-content centered-content">
+        <a href=""><img src="{% static 'irfoton_web/logo.png' %}" class= "logo" width="120" alt="logoFirme"/></a>
+        <div class="menu-links"><a href="{% url 'administrator' %}"{% if request.path == '/irfoton/nacrtovanje/' %} class="active"{% endif %}>Uporabniki</a></div>
+        <div class="menu-links"><a href="{% url 'logout' %}">Izpiši</a></div>
+      </div>
+    </header>
+	{% block content %}
+	{% endblock %}
+    <footer>
+      <span>
+        Spletno stran izdelal Klemen Moderc
+      </span>
+    </footer>
+    {% block linki-down %}
+	{% endblock %}	
+  </body>
+</html> 

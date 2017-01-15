@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
 from . import views
 
 urlpatterns = [
@@ -23,6 +24,14 @@ urlpatterns = [
     url(r'^logout/', views.logout_user, name='logout'),
 	url(r'^nacrtovanje/', views.nacrtovanje, name='nacrtovanje'),
 	url(r'^podatki/', views.podatki, name='podatki'),
+    url(r'^nova_soba/', views.nova_soba, name='nova_soba'),
+    url(r'^posodobi_sobo/', views.posodobi_sobo, name='posodobi_sobo'),
+    url(r'^izbrisi_sobo/', views.izbrisi_sobo, name='izbrisi_sobo'), 
+    url(r'^posodobi_pozicijo/', views.posodobi_pozicijo, name='posodobi_pozicijo'),    
 	url(r'^ogrevanje/', views.ogrevanje, name='ogrevanje'),
+    url(r'^register/', views.register, name='register'),
+    url(r'^register/success/', views.register_success,name='register-success'),
+    #url(r'^administrator/', views.admin_podatki, name='admin_podatki'),
+    url(r'^administrator/$', views.UsersView.as_view(), name='administrator'),
     url(r'^admin/', admin.site.urls),
 ]

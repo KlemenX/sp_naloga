@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Stanovanje, Soba, Paneli, Paneli_Tip
 
-# Register your models here.
+admin.site.register(Stanovanje)
+admin.site.register(Soba)
+admin.site.register(Paneli)
+admin.site.register(Paneli_Tip)

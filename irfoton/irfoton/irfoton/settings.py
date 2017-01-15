@@ -108,13 +108,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.request",
     "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages"
+    "django.contrib.messages.context_processors.messages",
 )
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LOCALE_PATHS = ['locale/']
 
 TIME_ZONE = 'UTC'
 
@@ -124,9 +126,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+#AUTH_PROFILE_MODULE = 'userprofile.UserProfile'     # app name (dot) model name
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+import django.contrib.auth
+django.contrib.auth.LOGIN_URL = '/'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
